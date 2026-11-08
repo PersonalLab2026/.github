@@ -1,0 +1,27 @@
+name: Documentation
+description: README, ADR or knowledge base update
+type: Documentation
+labels: ["agent:archivist"]
+body:
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options: [auth-kb, auth-dbx-lib, auth-dbx-dab, auth-generator]
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What to document
+    validations: {required: true}
+  - type: input
+    id: kb
+    attributes:
+      label: KB concepts
+      description: "Ontology entries to create or update"
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: "PR, ADR or ticket this comes from, e.g. #12"
+    validations: {required: true}

@@ -1,0 +1,22 @@
+name: Setup
+description: Repository structure, CI, conventions
+type: Setup
+labels: ["agent:developer"]
+body:
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options: [auth-dbx-lib, auth-dbx-dab, auth-generator, auth-kb]
+    validations: {required: true}
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+    validations: {required: true}
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: "- [ ] "
+    validations: {required: true}
