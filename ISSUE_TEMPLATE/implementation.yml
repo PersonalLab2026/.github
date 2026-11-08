@@ -1,0 +1,49 @@
+name: Implementation
+description: Code change on a specific repo, with technical specs
+type: Implementation
+labels: ["agent:developer"]
+body:
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options: [auth-dbx-lib, auth-dbx-dab, auth-generator, auth-kb]
+    validations: {required: true}
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What must exist when this ticket is done
+    validations: {required: true}
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Testable checklist, one item per line
+      value: "- [ ] "
+    validations: {required: true}
+  - type: textarea
+    id: specs
+    attributes:
+      label: Technical specs
+    validations: {required: true}
+  - type: input
+    id: deps
+    attributes:
+      label: Depends on
+      description: "Issue references, e.g. #12"
+  - type: input
+    id: kb
+    attributes:
+      label: KB concepts
+      description: "Ontology entries involved, e.g. authorization, R2, Q5"
+  - type: input
+    id: adr
+    attributes:
+      label: Related ADR
+  - type: checkboxes
+    id: speckit
+    attributes:
+      label: Process
+      options:
+        - label: Requires full Spec Kit flow (non-trivial change)
